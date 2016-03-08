@@ -1,0 +1,29 @@
+﻿<Window
+    x:Class="Wpf_TrajectorySimulation.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Wpf_TrajectorySimulation"
+    Title="Der schiefe Wurf (Physik / Mechanik)"
+    Height="500" Width="700">
+
+    <DockPanel LastChildFill="True">
+        <UniformGrid DockPanel.Dock="Bottom" Rows="1"  Columns="2" Margin="5" >
+            <UniformGrid Rows="1" Columns="2">
+                <Button Name="ButtonStart" Click="Button_Click" Margin="5">Start</Button>
+                <Button Name="ButtonClear" Click="Button_Click" Margin="5">Clear</Button>
+            </UniformGrid>           
+            <DockPanel LastChildFill="True">
+                <Label DockPanel.Dock="Left" VerticalContentAlignment="Center">Zeit:</Label>
+                <TextBox Name="TextBoxTimeElapsed" IsEnabled="False" Margin="5"></TextBox>
+            </DockPanel>
+        </UniformGrid>
+        <local:TrajectorySettingsControl
+            x:Name="TrajectorySettings"
+            DockPanel.Dock="Bottom">
+        </local:TrajectorySettingsControl>
+        <local:TrajectoryViewControl
+            x:Name="TrajectoryView"
+            BallHeight="{Binding ElementName=TrajectorySettings, Path=StartHeight}">
+        </local:TrajectoryViewControl>
+    </DockPanel>
+</Window>

@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="Wpf_TrajectorySimulation.TrajectorySettingsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="100" d:DesignWidth="400">
+    
+    <UniformGrid Rows="2" Columns="3">
+        <DockPanel LastChildFill="True" Margin="5">
+            <Label DockPanel.Dock="Left"
+                VerticalContentAlignment="Center">Abwurfwinkel:</Label>
+            <TextBox Name="TextBoxLaunchAngle" IsEnabled="False"></TextBox>
+        </DockPanel>
+        
+        <DockPanel LastChildFill="True" Margin="5">
+            <Label DockPanel.Dock="Left"
+                VerticalContentAlignment="Center">Abwurfhöhe:</Label>
+            <TextBox Name="TextBoxLaunchHeight" IsEnabled="False"></TextBox>
+        </DockPanel>
+        
+        <DockPanel LastChildFill="True" Margin="5">
+            <Label DockPanel.Dock="Left"
+                VerticalContentAlignment="Center">Abwurfgeschwindigkeit:</Label>
+            <TextBox Name="TextBoxLaunchVelocity" IsEnabled="False"></TextBox>
+        </DockPanel>
+        
+        <Slider Name="SliderStartAngle"
+                Foreground="Blue" LargeChange="1" SmallChange="1"
+                Minimum="0" Maximum="90" TickPlacement="BottomRight"
+                TickFrequency="5" ValueChanged="Slider_ValueChanged"
+                Margin="5"/>
+        
+        <Slider Name="SliderStartHeight" Foreground="Blue"
+                IsSnapToTickEnabled="True"
+                Minimum="0" Maximum="10"
+                TickPlacement="BottomRight"
+                TickFrequency="0.5" ValueChanged="Slider_ValueChanged"
+                Margin="5"/>
+        
+        <Slider Name="SliderStartVelocity" Foreground="Blue"
+                Minimum="0" Maximum="100"
+                TickPlacement="BottomRight"
+                TickFrequency="5" ValueChanged="Slider_ValueChanged"
+                Margin="5" />
+    </UniformGrid>
+</UserControl>
