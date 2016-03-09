@@ -100,7 +100,7 @@
         }
 
         // private helper methods
-        private void TrajectoryTimerTick(object sender, EventArgs e)
+        private void TrajectoryTimerTick(Object sender, EventArgs e)
         {
             Point p = this.CalcPosition(t);
 
@@ -124,8 +124,8 @@
         {
             return
                 this.startHeight
-                + (this.startVelocity * Math.Sin(this.startAngleRadian) * t)
-                - 0.5 * Gravity * t * t;
+                    + (this.startVelocity * Math.Sin(this.startAngleRadian) * t)
+                    - 0.5 * Gravity * t * t;
         }
 
         private Point CalcPosition(double t)
